@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Senior Capstone Thesis | Steffan Jones</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="theme-green">
+  <div class="container">
+    <nav style="padding: 1rem;">
+      <a href="../index.html">← Back to Main Page</a>
+    </nav>
+
+    <main>
+      <section>
+        <!-- Title -->
+        <h2>Senior Capstone Thesis</h2>
+
+        <!-- Short blurb -->
+        <p><em>Short blurb about your project goes here. 1–2 sentences summarizing your work.</em></p>
+
+        <!-- Carousel -->
+        <div class="carousel">
+          <div class="carousel-media active" data-caption="Caption for Image 1">
+            <img src="../assets/image1.jpg" alt="Image 1" class="project-image" />
+          </div>
+          <div class="carousel-media" data-caption="Caption for Image 2">
+            <img src="../assets/image2.jpg" alt="Image 2" class="project-image" />
+          </div>
+          <div class="carousel-media" data-caption="Caption for Image 3">
+            <img src="../assets/image3.jpg" alt="Image 3" class="project-image" />
+          </div>
+
+          <div class="carousel-controls">
+            <button onclick="prevSlide()">⟵</button>
+            <p id="carousel-caption"></p>
+            <button onclick="nextSlide()">⟶</button>
+          </div>
+        </div>
+
+        <!-- Main description -->
+        <p style="margin-top: 2rem;">
+          <em>Full project description goes here. Use this section to dive into what you built, how you designed it, and what you learned.</em>
+        </p>
+
+        <!-- Buttons -->
+        
+        <div style="margin-top: 2rem; text-align: center;">
+          <a class="btn" href="https://seas.harvard.edu/news/2025/07/zooming-future" target="_blank">Read Article</a>
+          <a class="btn" href="../assets/presentation.pdf" download>Download Thesis (PDF)</a>
+        </div>
+
+        <!-- Embedded PDF viewer -->
+        <div style="margin-top: 2rem;">
+          <iframe
+            src="../assets/presentation.pdf"
+            width="100%"
+            height="600px"
+            style="border: none; border-radius: 1rem;"
+          >
+            This browser does not support PDFs. <a href="../assets/presentation.pdf">Download PDF</a> instead.
+          </iframe>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Carousel JS -->
+  <script>
+    const slides = document.querySelectorAll('.carousel-media');
+    const caption = document.getElementById('carousel-caption');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      caption.textContent = slides[index].dataset.caption;
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      showSlide(current);
+    });
+  </script>
+</body>
+</html>
