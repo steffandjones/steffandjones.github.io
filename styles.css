@@ -99,7 +99,7 @@ h2 {
 /* Project Cards */
 .projects {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 1rem;
 }
@@ -130,6 +130,12 @@ h2 {
   color: var(--muted);
   font-size: 0.95rem;
 }
+
+/* NEW: stretch one card full width */
+.card.wide {
+  grid-column: 1 / -1;
+}
+
 
 /* Skills */
 .skills {
