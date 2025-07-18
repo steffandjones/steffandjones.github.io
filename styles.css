@@ -249,3 +249,9 @@ footer {
   color: var(--muted);
   background: #f9fafb;
 }
+
+.justify {
+  text-align: justify;
+  text-justify: inter-word;
+}
+
