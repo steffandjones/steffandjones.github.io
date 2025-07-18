@@ -261,6 +261,16 @@ footer {
   text-justify: inter-word;
 }
 
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .card.wide {
+    grid-column: auto;
+  }
+}
+
 .center {
   text-align: center;
 }
