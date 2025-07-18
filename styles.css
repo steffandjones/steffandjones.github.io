@@ -274,3 +274,7 @@ footer {
 .center {
   text-align: center;
 }
+
+p {
+  padding: 0 1rem;
+}
