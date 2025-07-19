@@ -275,6 +275,11 @@ footer {
   text-align: center;
 }
 
-p {
+main p, section p {
   padding: 0 1rem;
+}
+
+/* But exclude card text */
+.card p {
+  padding: 0;
 }
