@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Balsa Wood Bridge | Steffan Jones</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="theme-orange">
+  <div class="container">
+    <nav style="padding: 1rem;">
+      <a href="../index.html">← Back to Main Page</a>
+    </nav>
+
+    <main>
+      <section>
+        <!-- Title -->
+        <h2>Balsa Wood Bridge</h2>
+
+        <!-- Short blurb -->
+        <p class="justify">
+          Designed and built a balsa wood bridge optimized for load-bearing strength using a tension-based string system. <em>Images and final documentation below.</em>
+        </p>
+
+        <!-- Carousel -->
+        <div class="carousel">
+          <div class="carousel-media active" data-caption="The bridge actively being tested on">
+            <img src="../assets/BalsaBridge.JPG" alt="Bridge CAD" class="project-image" />
+          </div>
+          <div class="carousel-media" data-caption="Bridge assembly showing truss structure and glued joints">
+            <img src="../assets/balsabridgebuild.JPG" alt="Bridge assembly" class="project-image" />
+          </div>
+          <div class="carousel-media" data-caption="Different truss design principles">
+            <img src="../assets/trussdesigns.jpg" alt="String reinforcement" class="project-image" />
+          </div>
+
+        <div class="carousel-controls">
+          <button onclick="prevSlide()">⟵</button>
+          <p id="carousel-caption"></p>
+          <button onclick="nextSlide()">⟶</button>
+        </div>
+
+        <!-- Main description -->
+        <p style="margin-top: 2rem;">
+          This project involved designing and building a small-scale truss bridge entirely from balsa wood. The goal was to achieve the highest load-to-weight ratio possible using only basic materials and adhesives.
+
+          <br><br>
+
+          The final design used a triangular truss structure and integrated a tension-based string reinforcement system to distribute force more effectively and reduce compression in weak points. Strings were strategically placed underneath the main span to transfer tension into the base, preventing sagging under load. 
+
+          <br><br>
+
+          We iteratively tested joint strength and geometry through physical prototyping and refined our layout based on observed stress failures. The final bridge held over 250 lbs, despite weighing less than 200 grams — a massive ratio and a highlight of lightweight structural design.
+
+          <br><br>
+
+          From this project, I gained hands-on experience in structural mechanics, tension/compression dynamics, and practical lessons in material behavior, bonding techniques, and failure analysis.
+        </p>
+
+        <!-- Skills -->
+        <section id="skills">
+          <div class="skills">
+            <span>Structural Design</span>
+            <span>Load Testing</span><span>Truss Design</span>
+            <span>String Reinforcement</span><span>Modeling</span><span>Failure Analysis</span>
+          </div>
+        </section>
+
+  <!-- Carousel JS -->
+  <script>
+    const slides = document.querySelectorAll('.carousel-media');
+    const caption = document.getElementById('carousel-caption');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      caption.textContent = slides[index].dataset.caption;
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      showSlide(current);
+    });
+  </script>
+</body>
+</html>
