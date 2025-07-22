@@ -1,6 +1,6 @@
 :root {
-  --accent: #3b82f6;
-  --accent-hover: #2563eb;
+  --accent: #708238;
+  --accent-hover: #556b2f;
   --bg: #f3f4f6;
   --text: #111827;
   --muted: #6b7280;
@@ -51,6 +51,7 @@ header {
   border: 4px solid var(--accent);
   display: block;
   margin: 0 auto 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 header h1 {
