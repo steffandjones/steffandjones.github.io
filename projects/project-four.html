@@ -1,1 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Internships | Steffan Jones</title>
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body class="theme-blue">
+  <div class="container">
+    <nav style="display: flex; justify-content: space-between; padding: 0.5rem;">
+      <a href="../index.html">← Back to Main Page</a>
+    </nav>
 
+    <main>
+      <section>
+        <!-- Title -->
+        <h2>My Internships</h2>
+
+        <!-- Short blurb -->
+        <p class="justify">
+          woords <strong>words</strong>, words
+          <em>more words</em>
+        </p>
+
+        <!-- Carousel -->
+        <div class="carousel">
+          <div class="carousel-media active" data-caption="Our holographic fan displaying Yin and Yang">
+            <img src="../assets/p2image.jpg" alt="LED Strip Static" class="project-image" />
+          </div>
+          <div class="carousel-media" data-caption="Electronics enclosure with Arduino and wiring">
+            <img src="../assets/3DFanCase.JPG" alt="Enclosure" class="project-image" />
+          </div>
+          <div class="carousel-media" data-caption="Static LED 1D rod">
+            <img src="../assets/3DFanLayout.png" alt="Enclosure" class="project-image" />
+          </div>
+          <div class="carousel-media" data-caption="Calibrating the period of the 3D fan">
+            <img src="../assets/fangif.gif" alt="Fan GIF" class="project-image" />
+          </div>
+        
+
+          <div class="carousel-controls">
+            <button onclick="prevSlide()">⟵</button>
+            <p id="carousel-caption"></p>
+            <button onclick="nextSlide()">⟶</button>
+          </div>
+        </div>
+
+        <!-- Main description -->
+        <p style="margin-top: 2rem;">
+          words in bulk
+        </p>
+
+        <!-- Buttons -->
+        <div style="margin-top: 2rem; text-align: center;">
+          <a class="btn" href="https://seas.harvard.edu/news/2023/05/science-fair" target="_blank">Read Article</a>
+        </div>
+
+        <!-- Skills -->
+        <section id="skills">
+          <div class="skills">
+            <span>Instron</span><span>Solidworks</span><span>Smoke Clearing</span>
+            <span>Bill of Materials</span><span>Teamwork</span><span>Excel</span>
+            <span>Word</span><span>Presenting findings</span>
+          </div>
+        </section>
+
+  <!-- Carousel JS -->
+  <script>
+    const slides = document.querySelectorAll('.carousel-media');
+    const caption = document.getElementById('carousel-caption');
+    let current = 0;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      caption.textContent = slides[index].dataset.caption;
+    }
+
+    function nextSlide() {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }
+
+    function prevSlide() {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      showSlide(current);
+    });
+  </script>
+</body>
+</html>
