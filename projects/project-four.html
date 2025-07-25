@@ -27,17 +27,15 @@
       <section>
         <h3>Alesi Surgical: Mechanical Engineering Intern</h3>
         
-        <!-- Main description -->
         <p style="margin-top: 2rem; text-align: justify;">
           Alesi Surgical is a medical device company based in Cardiff, Wales, focused on developing innovative technologies to improve surgical outcomes. Their flagship product, Ultravision™, is a pioneering system used in laparoscopic surgeries to manage surgical smoke and maintain clear visibility. As a mechanical engineering intern at Alesi Surgical, I worked closely with the engineering team to support product testing, design refinement, and quality improvement efforts across multiple devices.
-            <br><br>
+          <br><br>
           One of my main responsibilities was evaluating and improving the structural rigidity of a laparoscopic instrument in response to feedback from surgeons. Working alongside two other engineers, I conducted a series of mechanical tests using an Instron machine to quantify flexural strength across various rod materials. After gathering performance data, I compiled results into Excel spreadsheets, generated visualizations, and documented findings in formal reports. Our analysis ultimately influenced which material was selected for use in the final production model.
-            <br><br>
+          <br><br>
           Midway through my internship, I was asked to support the Ultravision team with a separate challenge: redesigning their internal test rig to reduce the time required to verify each device. I was given full creative control over the design process, using SolidWorks to model and iterate multiple prototypes. After several rounds of 3D printing and refinement, I delivered a final version that significantly streamlined the testing workflow. In addition to these projects, I also helped maintain internal documentation by checking and updating Bills of Materials (BOMs). I thoroughly enjoyed working across disciplines and contributing to both hands-on testing and product development.
-          
         </p>
 
-        <!-- Carousel -->
+        <!-- Alesi Carousel -->
         <div class="carousel">
           <div class="carousel-media active" data-caption="The evolutionary line of my 3D printed testing rig, focussing on optimization and user convenience">
             <img src="../assets/AS0.JPG" alt="3D print lineup" class="project-image" />
@@ -60,20 +58,18 @@
           <div class="carousel-media" data-caption="Testing the rigidity of the laproscopic device to match surgeon feedback">
             <img src="../assets/AS6.jpeg" alt="Rod bending" class="project-image" />
           </div>
-        
+
           <div class="carousel-controls">
-            <button onclick="prevSlide()">⟵</button>
-            <p id="carousel-caption"></p>
-            <button onclick="nextSlide()">⟶</button>
+            <button class="prev-btn">⟵</button>
+            <p class="carousel-caption"></p>
+            <button class="next-btn">⟶</button>
           </div>
         </div>
 
-        <!-- Buttons -->
         <div style="margin-top: 2rem; text-align: center;">
           <a class="btn" href="https://www.alesi-surgical.com/" target="_blank">Read more about Alesi Surgical Ltd</a>
         </div>
 
-        <!-- Skills -->
         <section id="skills">
           <div class="skills">
             <span>Instron</span><span>Solidworks</span><span>Smoke Clearing</span>
@@ -81,20 +77,19 @@
             <span>Word</span><span>Presenting findings</span>
           </div>
         </section>
+      </section>
 
-        <!--                     Aston Martin                         -->  
-        
-        <section>
+      <!-- Aston Martin Section -->
+      <section>
         <h3>Aston Martin Lagonda: Mechanical Engineering Shadow</h3>
         
-        <!-- Main description -->
         <p style="margin-top: 2rem; text-align: justify;">
           Between finishing my junior year and beginning my internship with Alesi Surgical, I had the opportunity to shadow at the Aston Martin Lagonda factory responsible for building the DBX707: the brand’s high-performance luxury SUV. Working closely with the engineering team, I assisted in evaluating and inspecting vehicles during various stages of production, identifying and scoring any issues, and flagging them when necessary. This process involved coordinating directly with relevant teams to help determine and implement solutions. 
           <br><br>
           I was able to observe every phase of the vehicle’s assembly; from the initial construction of the chassis tub to final performance testing on the track. In addition to technical inspections, I also conducted audits to ensure each workstation and its staff were operating according to company standards.
         </p>
 
-        <!-- Carousel -->
+        <!-- Aston Martin Carousel -->
         <div class="carousel">
           <div class="carousel-media active" data-caption="The 'tub' of the DBX707">
             <img src="../assets/AM1.JPG" alt="Tub of the DBX707" class="project-image" />
@@ -102,52 +97,59 @@
           <div class="carousel-media" data-caption="Bodywork inspection line, before final sale">
             <img src="../assets/Am2.JPG" alt="Cars awaiting bodywork inspection" class="project-image" />
           </div>
-                  
+
           <div class="carousel-controls">
-            <button onclick="prevSlide()">⟵</button>
-            <p id="carousel-caption"></p>
-            <button onclick="nextSlide()">⟶</button>
+            <button class="prev-btn">⟵</button>
+            <p class="carousel-caption"></p>
+            <button class="next-btn">⟶</button>
           </div>
         </div>
 
-        <!-- Buttons -->
         <div style="margin-top: 2rem; text-align: center;">
           <a class="btn" href="https://www.astonmartin.com/en-gb/models/dbx707" target="_blank">Read more about the DBX707</a>
         </div>
 
-        <!-- Skills -->
         <section id="skills">
           <div class="skills">
             <span>Auditing</span><span>Inspection</span><span>Evaluation</span>
             <span>Word</span><span>Presenting findings</span>
           </div>
         </section>
+      </section>
+    </main>
+  </div>
 
-  <!-- Carousel JS -->
+  <!-- Carousel Script -->
   <script>
-    const slides = document.querySelectorAll('.carousel-media');
-    const caption = document.getElementById('carousel-caption');
-    let current = 0;
+    function initCarousel(carouselContainer) {
+      const slides = carouselContainer.querySelectorAll('.carousel-media');
+      const caption = carouselContainer.querySelector('.carousel-caption');
+      const prevBtn = carouselContainer.querySelector('.prev-btn');
+      const nextBtn = carouselContainer.querySelector('.next-btn');
+      let current = 0;
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+        if (caption) caption.textContent = slides[index].dataset.caption;
+      }
+
+      prevBtn.addEventListener('click', () => {
+        current = (current - 1 + slides.length) % slides.length;
+        showSlide(current);
       });
-      caption.textContent = slides[index].dataset.caption;
-    }
 
-    function nextSlide() {
-      current = (current + 1) % slides.length;
-      showSlide(current);
-    }
+      nextBtn.addEventListener('click', () => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+      });
 
-    function prevSlide() {
-      current = (current - 1 + slides.length) % slides.length;
       showSlide(current);
     }
 
     document.addEventListener('DOMContentLoaded', () => {
-      showSlide(current);
+      document.querySelectorAll('.carousel').forEach(initCarousel);
     });
   </script>
 </body>
