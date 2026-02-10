@@ -4,57 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aston Martin Internship - Steffan Jones</title>
+
+  <!-- Fonts: trimmed to weights you use -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Preload hero image for faster LCP -->
+  <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&auto=format&fit=crop&q=80">
+
+  <!-- Shared CSS (cached across pages) -->
+  <link rel="preload" href="assets/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="assets/styles.css"></noscript>
+
+  <!-- tiny critical CSS so page paints instantly -->
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; opacity: 0; animation: pageLoad 0.6s ease-out forwards; }
-    
-    @keyframes pageLoad {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .fade-in { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
-    .delay-1 { animation-delay: 0.2s; }
-    .delay-2 { animation-delay: 0.4s; }
-    .delay-3 { animation-delay: 0.6s; }
-    .font-serif { font-family: 'Playfair Display', serif; }
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .nav-container { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; text-decoration: none; color: #0a0a0a; }
-    .back-btn { padding: 0.75rem 1.5rem; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; background-color: transparent; color: #0c0a09; border: 1px solid #0c0a09; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
-    .back-btn:hover { background-color: #fafaf9; }
-    .hero { height: 60vh; min-height: 400px; background-size: cover; background-position: center; position: relative; display: flex; align-items: flex-end; padding: 0 1.5rem 4rem; }
-    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6)); }
-    .hero-content { position: relative; z-index: 1; max-width: 72rem; margin: 0 auto; width: 100%; color: white; }
-    .hero-title { font-size: 4rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-    .hero-subtitle { font-size: 1.5rem; font-weight: 300; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-    .content { max-width: 56rem; margin: 0 auto; padding: 4rem 1.5rem; }
-    .section { margin-bottom: 4rem; }
-    .section-title { font-size: 2rem; font-weight: 600; margin-bottom: 1.5rem; color: #0a0a0a; }
-    .section-text { font-size: 1.125rem; line-height: 1.75; color: #44403c; margin-bottom: 1rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
-    .tag { padding: 0.5rem 1rem; font-size: 0.875rem; border: 1px solid #d6d3d1; color: #44403c; }
-    .highlights { background: #fafaf9; padding: 2rem; border-left: 3px solid #0a0a0a; margin: 2rem 0; }
-    .highlights h3 { font-size: 1.25rem; margin-bottom: 1rem; color: #0a0a0a; }
-    .highlights ul { list-style: none; padding-left: 0; }
-    .highlights li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: #44403c; }
-    .highlights li::before { content: '→'; position: absolute; left: 0; color: #0a0a0a; }
-    footer { padding: 3rem 1.5rem; border-top: 1px solid #e7e5e4; text-align: center; }
-    footer p { font-size: 0.875rem; color: #78716c; }
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2.5rem; }
-      .hero-subtitle { font-size: 1.125rem; }
-      .section-title { font-size: 1.5rem; }
-    }
+    html { background: #fff; }
+    body { margin: 0; }
   </style>
 </head>
 <body>
@@ -62,7 +29,7 @@
     <div class="nav-container">
       <a href="index.html" class="logo font-serif">Steffan Jones</a>
       <a href="index.html" class="back-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>
         </svg>
         Back to Home
@@ -70,7 +37,24 @@
     </div>
   </nav>
 
-  <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&h=900&fit=crop');">
+  <div class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&auto=format&fit=crop&q=80"
+        srcset="
+          https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&auto=format&fit=crop&q=80 800w,
+          https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1200&auto=format&fit=crop&q=80 1200w,
+          https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&auto=format&fit=crop&q=80 1600w
+        "
+        sizes="(max-width: 768px) 800px, 1600px"
+        loading="eager"
+        decoding="async"
+        width="1600"
+        height="900"
+        alt=""
+      >
+    </div>
+
     <div class="hero-content">
       <h1 class="hero-title font-serif">Aston Martin Internship</h1>
       <p class="hero-subtitle">Automotive Engineering · Aston Martin Lagonda</p>
@@ -80,7 +64,11 @@
   <div class="content">
     <div class="section fade-in">
       <h2 class="section-title font-serif">Project Overview</h2>
-      <p class="section-text">Engineering internship at Aston Martin Lagonda, contributing to automotive research and development projects. Gained hands-on experience with high-performance vehicle engineering, manufacturing processes, and quality assurance in a luxury automotive environment.</p>
+      <p class="section-text">
+        Engineering internship at Aston Martin Lagonda, contributing to automotive research and development projects.
+        Gained hands-on experience with high-performance vehicle engineering, manufacturing processes, and quality assurance
+        in a luxury automotive environment.
+      </p>
     </div>
 
     <div class="highlights fade-in delay-1">
@@ -96,7 +84,11 @@
 
     <div class="section fade-in">
       <h2 class="section-title font-serif">Technical Details</h2>
-      <p class="section-text">Worked with advanced CAD software to support vehicle design and engineering analysis. Participated in testing protocols for component validation and assisted senior engineers with data collection and analysis. Gained understanding of automotive regulations, safety standards, and the development cycle for luxury performance vehicles.</p>
+      <p class="section-text">
+        Worked with advanced CAD software to support vehicle design and engineering analysis. Participated in testing protocols
+        for component validation and assisted senior engineers with data collection and analysis. Gained understanding of automotive
+        regulations, safety standards, and the development cycle for luxury performance vehicles.
+      </p>
     </div>
 
     <div class="section fade-in">
@@ -104,10 +96,10 @@
       <div class="tags">
         <span class="tag">Automotive Engineering</span>
         <span class="tag">CAD</span>
-        <span class="tag">Testing & Validation</span>
+        <span class="tag">Testing &amp; Validation</span>
         <span class="tag">Manufacturing</span>
         <span class="tag">Quality Assurance</span>
-        <span class="tag">R&D</span>
+        <span class="tag">R&amp;D</span>
       </div>
     </div>
   </div>
