@@ -3,69 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Steffan Jones Tutoring - Steffan Jones</title>
+  <title>Education Access Initiative - Steffan Jones</title>
+
+  <!-- Fonts: trimmed -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Preload hero image (LCP) -->
+  <link rel="preload" as="image"
+        href="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&auto=format&fit=crop&q=80">
+
+  <!-- Shared CSS (cached across pages) -->
+  <link rel="preload" href="/assets/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/assets/styles.css"></noscript>
+
+  <!-- tiny critical CSS -->
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; opacity: 0; animation: pageLoad 0.6s ease-out forwards; }
-    .font-serif { font-family: 'Playfair Display', serif; }
-    
-    @keyframes pageLoad {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .fade-in { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
-    .delay-1 { animation-delay: 0.2s; }
-    .delay-2 { animation-delay: 0.4s; }
-    .delay-3 { animation-delay: 0.6s; }
-    
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-    .nav-container { max-width: 72rem; margin: 0 auto; padding: 2rem 1.5rem; display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; text-decoration: none; color: #0a0a0a; }
-    .back-btn { padding: 0.75rem 1.5rem; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; background-color: transparent; color: #0c0a09; border: 1px solid #0c0a09; cursor: pointer; transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; }
-    .back-btn:hover { background-color: #fafaf9; }
-    
-    .hero { height: 60vh; min-height: 400px; background-size: cover; background-position: center; position: relative; display: flex; align-items: flex-end; padding: 0 1.5rem 4rem; }
-    .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7)); }
-    .hero-content { position: relative; z-index: 1; max-width: 72rem; margin: 0 auto; width: 100%; color: white; }
-    .hero-title { font-size: 4rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-    .hero-subtitle { font-size: 1.5rem; font-weight: 300; text-shadow: 0 2px 10px rgba(0,0,0,0.3); }
-    
-    .content { max-width: 56rem; margin: 0 auto; padding: 4rem 1.5rem; }
-    .section { margin-bottom: 4rem; }
-    .section-title { font-size: 2rem; font-weight: 600; margin-bottom: 1.5rem; color: #0a0a0a; }
-    .section-text { font-size: 1.125rem; line-height: 1.75; color: #44403c; margin-bottom: 1rem; }
-    .tags { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
-    .tag { padding: 0.5rem 1rem; font-size: 0.875rem; border: 1px solid #d6d3d1; color: #44403c; }
-    .highlights { background: #fafaf9; padding: 2rem; border-left: 3px solid #0a0a0a; margin: 2rem 0; }
-    .highlights h3 { font-size: 1.25rem; margin-bottom: 1rem; color: #0a0a0a; }
-    .highlights ul { list-style: none; padding-left: 0; }
-    .highlights li { padding: 0.5rem 0; padding-left: 1.5rem; position: relative; color: #44403c; }
-    .highlights li::before { content: '→'; position: absolute; left: 0; color: #0a0a0a; }
-    
-    .cta-box { background: #0a0a0a; color: white; padding: 2.5rem; text-align: center; margin: 3rem 0; }
-    .cta-box h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-    .cta-box p { margin-bottom: 1.5rem; opacity: 0.9; }
-    .cta-btn { display: inline-block; padding: 1rem 2rem; background: white; color: #0a0a0a; text-decoration: none; font-weight: 600; transition: transform 0.2s; }
-    .cta-btn:hover { transform: translateY(-2px); }
-    
-    footer { padding: 3rem 1.5rem; border-top: 1px solid #e7e5e4; text-align: center; }
-    footer p { font-size: 0.875rem; color: #78716c; }
-    
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2.5rem; }
-      .hero-subtitle { font-size: 1.125rem; }
-      .section-title { font-size: 1.5rem; }
-    }
+    html { background: #fff; }
+    body { margin: 0; }
   </style>
 </head>
 <body>
@@ -73,7 +29,7 @@
     <div class="nav-container">
       <a href="index.html" class="logo font-serif">Steffan Jones</a>
       <a href="index.html" class="back-btn">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <path d="M19 12H5"/><path d="m12 19-7-7 7-7"/>
         </svg>
         Back to Home
@@ -81,73 +37,102 @@
     </div>
   </nav>
 
-  <div class="hero" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&h=900&fit=crop');">
+  <div class="hero">
+    <div class="hero-media" aria-hidden="true">
+      <img
+        src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&auto=format&fit=crop&q=80"
+        srcset="
+          https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=80 800w,
+          https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&auto=format&fit=crop&q=80 1200w,
+          https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1600&auto=format&fit=crop&q=80 1600w
+        "
+        sizes="(max-width: 768px) 800px, 1600px"
+        loading="eager"
+        decoding="async"
+        width="1600"
+        height="900"
+        alt=""
+      >
+    </div>
+
     <div class="hero-content">
-      <h1 class="hero-title font-serif">Steffan Jones Tutoring</h1>
-      <p class="hero-subtitle">Engineering. Education. Excellence.</p>
+      <h1 class="hero-title font-serif">Education Access Initiative</h1>
+      <p class="hero-subtitle">Closing the guidance gap for Welsh students aiming high</p>
     </div>
   </div>
 
   <div class="content">
     <div class="section fade-in">
-      <h2 class="section-title font-serif">About the Business</h2>
+      <h2 class="section-title font-serif">Why I Started This</h2>
       <p class="section-text">
-        Steffan Jones Tutoring provides personalized academic tutoring and university guidance for students at GCSE, A-Level, and university level. As a Harvard-educated Mechanical Engineer from Wales, I'm passionate about making education accessible and helping students from underrepresented backgrounds achieve their academic dreams.
+        After growing up in Wales and studying Mechanical Engineering at Harvard, I noticed a clear gap: many Welsh students have the
+        ability to compete for top universities, but far fewer have access to the mentorship, application knowledge, and confidence-building
+        support that students in better-resourced areas often take for granted.
       </p>
       <p class="section-text">
-        I started this tutoring business because I experienced firsthand the limited support available to Welsh students aiming for top institutions. Being the only Welsh student at Harvard made me realize how important it is for students to have guidance from someone who understands their journey. I want students from Wales and beyond to know that the highest heights are achievable, and they don't have to figure it all out alone.
+        I started this work to make that path more visible and more navigable — especially for students targeting Russell Group and
+        highly selective international universities. The goal isn’t “tutoring as a product”; it’s building a practical support system that
+        helps talented students translate potential into outcomes.
       </p>
     </div>
 
     <div class="highlights fade-in delay-1">
-      <h3 class="font-serif">Services Offered</h3>
+      <h3 class="font-serif">What I Built</h3>
       <ul>
-        <li><strong>Academic Tutoring:</strong> Mathematics, Physics, Chemistry, Biology, Computer Science, English, and more at GCSE, A-Level, and university level</li>
-        <li><strong>University Guidance:</strong> Complete support through the application process—from finding schools to crafting essays and preparing for interviews</li>
-        <li><strong>SAT/ACT Preparation:</strong> Comprehensive test prep for US university admissions</li>
-        <li><strong>Interview Preparation:</strong> Specialized coaching for Oxford, Cambridge, MIT, and other elite university interviews</li>
-        <li><strong>Harvard Admissions Interviewing:</strong> Official Harvard interviewer with insider knowledge of what committees look for</li>
-        <li><strong>Bilingual Support:</strong> Sessions available in both English and Welsh</li>
+        <li><strong>Academic support:</strong> Structured tutoring for GCSE, A-Level, and university STEM (plus broader subjects when needed)</li>
+        <li><strong>University guidance:</strong> Planning, positioning, essays, and interview preparation — with a focus on clarity and confidence</li>
+        <li><strong>US admissions support:</strong> SAT/ACT prep and application strategy for students exploring American universities</li>
+        <li><strong>Bilingual access:</strong> Sessions available in both English and Welsh</li>
       </ul>
     </div>
 
     <div class="section fade-in delay-2">
-      <h2 class="section-title font-serif">Teaching Philosophy</h2>
+      <h2 class="section-title font-serif">How I Approach It</h2>
       <p class="section-text">
-        My tutoring style is patient, clear, and flexible. I start by understanding each student's strengths and gaps, then focus our time where it will make the biggest difference. I aim to make sessions engaging and supportive while pushing students to believe in themselves and strive higher than they thought possible.
+        I work like an engineer: diagnose the problem, build a plan, iterate quickly, and track progress. For academics, that means
+        identifying where marks are being lost and fixing those patterns. For applications, it means turning a student’s story into a clear,
+        credible narrative — without trying to “manufacture” someone into a different person.
       </p>
       <p class="section-text">
-        At Harvard, I served as Lead Course Assistant for Thermodynamics and tutored Life Sciences, where I discovered my genuine passion for teaching. I've worked with students of all ages and backgrounds, including children with additional learning needs, which taught me how to adapt to different learning styles and meet students where they are.
-      </p>
-      <p class="section-text">
-        <strong>What students say:</strong> "You had a way of breaking down exam prep and tricky topics so they actually made sense, instead of just feeling abstract and painful. I walked into the exam way more confident because of how clearly and patiently you explained things." — Peter F., Harvard Senior
+        My teaching background includes leading course support at Harvard (Thermodynamics / Heat Transfer) and tutoring across age groups,
+        including students with additional learning needs. The through-line is the same: meet students where they are, then raise the ceiling.
       </p>
     </div>
 
-    <div class="cta-box fade-in delay-3">
-      <h3 class="font-serif">Visit the Full Tutoring Website</h3>
-      <p>Learn more about services, pricing, student testimonials, and book a free consultation</p>
-      <a href="https://steffanteach.github.io" target="_blank" class="cta-btn">
-        steffanteach.github.io →
-      </a>
+    <div class="highlights fade-in delay-2">
+      <h3 class="font-serif">Evidence of Impact</h3>
+      <ul>
+        <li><strong>Teaching leadership:</strong> Lead Course Assistant roles supporting large cohorts with technical content</li>
+        <li><strong>Mentorship:</strong> Experience supporting Welsh students through academic and personal transition points</li>
+        <li><strong>Clarity under pressure:</strong> Students consistently cite “breaking down hard topics” and confidence-building as outcomes</li>
+      </ul>
     </div>
 
     <div class="section fade-in delay-3">
-      <h2 class="section-title font-serif">Key Qualifications</h2>
+      <h2 class="section-title font-serif">Snapshot</h2>
       <div class="tags">
-        <span class="tag">Harvard Graduate</span>
-        <span class="tag">Mechanical Engineering SB</span>
-        <span class="tag">Harvard Admissions Interviewer</span>
-        <span class="tag">Lead Course Assistant</span>
-        <span class="tag">Seren Network Mentor</span>
-        <span class="tag">MIT Interview Prep</span>
-        <span class="tag">Oxford Interview Prep</span>
+        <span class="tag">Initiative &amp; Ownership</span>
+        <span class="tag">Education Access</span>
+        <span class="tag">Welsh Student Support</span>
+        <span class="tag">Harvard Engineering SB</span>
+        <span class="tag">Teaching Leadership</span>
+        <span class="tag">Admissions Guidance</span>
+        <span class="tag">Interview Preparation</span>
         <span class="tag">Bilingual (English/Welsh)</span>
-        <span class="tag">10+ Subjects</span>
-        <span class="tag">GCSE/A-Level/University</span>
-        <span class="tag">SAT/ACT Prep</span>
-        <span class="tag">Online & In-Person</span>
       </div>
+    </div>
+
+    <div class="section fade-in">
+      <h2 class="section-title font-serif">Learn More</h2>
+      <p class="section-text">
+        I keep a separate site with more detail (materials, examples, and how I structure support). If you’re viewing this page as part of
+        my portfolio, the key point is the initiative: I identified a gap, built a system to address it, and kept improving it based on real student needs.
+      </p>
+      <p class="section-text">
+        <a class="back-btn" href="https://steffanteach.github.io" target="_blank" rel="noopener noreferrer">
+          Visit steffanteach.github.io →
+        </a>
+      </p>
     </div>
 
     <div class="section">
@@ -155,10 +140,7 @@
       <p class="section-text">
         <strong>Email:</strong> steffdjones@gmail.com<br>
         <strong>WhatsApp:</strong> +44 07508 011667<br>
-        <strong>Location:</strong> Ystradgynlais, Wales (In-person tutoring available within 45 miles)
-      </p>
-      <p class="section-text" style="margin-top: 1.5rem;">
-        Free 15-minute consultation available to discuss your goals and see if we're a good fit.
+        <strong>Location:</strong> Ystradgynlais, Wales
       </p>
     </div>
   </div>
