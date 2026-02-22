@@ -11,8 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Preload hero image (LCP) -->
-  <link rel="preload" as="image"
-        href="https://images.unsplash.com/photo-1517976487492-5750f3195933?w=1600&auto=format&fit=crop&q=80">
+  <link rel="preload" as="image" href="assets/images/rocketfield.jfif">
 
   <!-- Shared CSS (cached across pages) -->
   <link rel="preload" href="/assets/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -40,13 +39,7 @@
   <div class="hero">
     <div class="hero-media" aria-hidden="true">
       <img
-        src="https://images.unsplash.com/photo-1517976487492-5750f3195933?w=1200&auto=format&fit=crop&q=80"
-        srcset="
-          https://images.unsplash.com/photo-1517976487492-5750f3195933?w=800&auto=format&fit=crop&q=80 800w,
-          https://images.unsplash.com/photo-1517976487492-5750f3195933?w=1200&auto=format&fit=crop&q=80 1200w,
-          https://images.unsplash.com/photo-1517976487492-5750f3195933?w=1600&auto=format&fit=crop&q=80 1600w
-        "
-        sizes="(max-width: 768px) 800px, 1600px"
+        src="assets/images/rocketfield.jfif"
         loading="eager"
         decoding="async"
         width="1600"
@@ -65,25 +58,34 @@
     <div class="section fade-in">
       <h2 class="section-title font-serif">Project Overview</h2>
       <p class="section-text">
-        Member of the Harvard Rocket Propulsion Group, contributing to the design and development of the Ivy League's first liquid bi-propellant rocket engine. This ambitious project combined thermodynamics, fluid mechanics, and materials engineering to create a functional rocket propulsion system.
+        Member of the Harvard Rocket Propulsion Group (HRPG), the student-led team building the Mojave Sphinx: the Ivy League's first contemporary liquid bipropellant rocket. The group was founded with a clear mission: to design, build, and test a flight-capable liquid bipropellant engine and provide students with real industry-relevant aerospace engineering experience.
+      </p>
+      <p class="section-text">
+        The Mojave Sphinx runs on nitrous oxide and an alcohol-based fuel, with a propulsion system built around a heatsink combustion chamber, scrintle injector, and a custom spark torch igniter. A key milestone during my involvement was achieving stable combustion in a successful hot fire of the spark torch igniter, a result that required iterative design, careful instrumentation, and field testing at Minuteman Airfield in Stow, Massachusetts.
       </p>
     </div>
 
     <div class="highlights fade-in delay-1">
-      <h3 class="font-serif">Key Achievements</h3>
+      <h3 class="font-serif">Key Contributions</h3>
       <ul>
-        <li>Contributed to Ivy League's first liquid rocket engine</li>
-        <li>Designed and tested propulsion system components</li>
-        <li>Performed thermal and structural analysis</li>
-        <li>Assisted with test stand instrumentation</li>
-        <li>Participated in static fire testing procedures</li>
+        <li>Achieved stable combustion in a successful hot fire of the spark torch igniter</li>
+        <li>Contributed to propulsion system fabrication and integration</li>
+        <li>Supported test stand setup and instrumentation for static fire testing</li>
+        <li>Worked across propellant feed systems, valves, and plumbing</li>
+        <li>Part of the team delivering the Ivy League's first liquid bipropellant rocket engine</li>
       </ul>
     </div>
 
     <div class="section fade-in">
-      <h2 class="section-title font-serif">Technical Details</h2>
+      <h2 class="section-title font-serif">Technical Work</h2>
       <p class="section-text">
-        The project involved designing a regeneratively-cooled combustion chamber, developing injector geometry for optimal fuel-oxidizer mixing, and creating feed systems with proper flow control. Extensive use of CFD and FEA ensured safe operation under extreme temperatures and pressures. Safety protocols and testing procedures were developed in accordance with aerospace standards.
+        The propulsion system uses a scrintle injector and heatsink combustion chamber designed for repeatable ignition and stable combustion of nitrous oxide and alcohol fuel. The spark torch igniter was a critical component: achieving reliable ignition under real test conditions required precision in design, careful management of propellant flow, and multiple iterations based on data from previous attempts.
+      </p>
+      <p class="section-text">
+        The fluids system controls the full propellant flow path from tanks to combustion chamber, using servo-actuated ball valves, stainless steel and PTFE feedlines, and passive dual-acting vapor pressure pressurization. Data and control systems handle remote ignition commands and log chamber pressure and valve state throughout the burn.
+      </p>
+      <p class="section-text">
+        Field testing took place at Minuteman Airfield in Stow, Mass., where the team worked through the challenges of producing stable thrust for the first time at the Ivy League level.
       </p>
     </div>
 
@@ -92,11 +94,14 @@
       <div class="carousel" aria-label="Project gallery">
         <div class="carousel-viewport">
           <div class="carousel-track">
-            <figure class="carousel-slide" data-caption="Add a caption for this image">
-              <img src="assets/images/rocket-propulsion-1.jpg" alt="Rocket propulsion image 1">
+            <figure class="carousel-slide" data-caption="Hot fire test of the spark torch igniter at Minuteman Airfield">
+              <img src="assets/images/rocketfield.jfif" alt="Rocket hot fire test at Minuteman Airfield">
             </figure>
-            <figure class="carousel-slide" data-caption="Add a caption for this image">
-              <img src="assets/images/rocket-propulsion-2.jpg" alt="Rocket propulsion image 2">
+            <figure class="carousel-slide" data-caption="Propulsion system assembly">
+              <img src="assets/images/rocketpropulsion.jfif" alt="Rocket propulsion system">
+            </figure>
+            <figure class="carousel-slide" data-caption="Fabrication work on the propellant feed system">
+              <img src="assets/images/rocketweld.jfif" alt="Welding rocket propellant feed lines">
             </figure>
           </div>
           <button class="carousel-btn carousel-prev" aria-label="Previous image">
@@ -120,13 +125,14 @@
     <div class="section fade-in">
       <h2 class="section-title font-serif">Skills &amp; Tools</h2>
       <div class="tags">
-        <span class="tag">Rocket Propulsion</span>
-        <span class="tag">Thermodynamics</span>
+        <span class="tag">Liquid Bipropellant Propulsion</span>
+        <span class="tag">Combustion Systems</span>
+        <span class="tag">Ignition Design</span>
+        <span class="tag">Propellant Feed Systems</span>
+        <span class="tag">Static Fire Testing</span>
         <span class="tag">Fluid Mechanics</span>
-        <span class="tag">CFD</span>
-        <span class="tag">Materials Engineering</span>
-        <span class="tag">Test Systems</span>
-        <span class="tag">Aerospace</span>
+        <span class="tag">Fabrication</span>
+        <span class="tag">Aerospace Engineering</span>
       </div>
     </div>
   </div>
