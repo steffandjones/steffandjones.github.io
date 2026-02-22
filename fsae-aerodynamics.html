@@ -110,6 +110,61 @@
       </p>
     </div>
 
+    <div class="section fade-in">
+      <h2 class="section-title font-serif">Gallery</h2>
+      <div class="carousel" aria-label="Project gallery">
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <figure class="carousel-slide" data-caption="Harvard Crimson Motorsport — full car render">
+              <img src="assets/images/FSAE_Cover.png" alt="FSAE race car render">
+            </figure>
+            <figure class="carousel-slide" data-caption="Presenting the wing package with the aerodynamics team">
+              <img src="assets/images/thesis.JPG" alt="Team with FSAE wing assembly">
+            </figure>
+            <figure class="carousel-slide" data-caption="3D printed wing profile — foam core with carbon fibre skin">
+              <img src="assets/images/thesis3.PNG" alt="3D printed wing airfoil">
+            </figure>
+            <figure class="carousel-slide" data-caption="Composite layup process for the wing elements">
+              <img src="assets/images/thesis1.PNG" alt="Composite wing layup diagram">
+            </figure>
+            <figure class="carousel-slide" data-caption="CFD simulation — SimScale isometric view">
+              <img src="assets/images/SimScaleIso.gif" alt="CFD simulation isometric view">
+            </figure>
+            <figure class="carousel-slide" data-caption="CFD simulation — rear downforce analysis">
+              <img src="assets/images/SimScaleRear.gif" alt="CFD simulation rear view">
+            </figure>
+          </div>
+          <button class="carousel-btn carousel-prev" aria-label="Previous image">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="carousel-btn carousel-next" aria-label="Next image">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+        <div class="carousel-footer">
+          <p class="carousel-caption"></p>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section fade-in">
+      <h2 class="section-title font-serif">Thesis Presentation</h2>
+      <p class="section-text">Full aerodynamics design report submitted as part of the Harvard senior capstone.</p>
+      <iframe class="pdf-embed" src="assets/pdfs/thesispresentation.pdf" title="FSAE Aerodynamics Thesis Presentation"></iframe>
+      <a href="assets/pdfs/thesispresentation.pdf" target="_blank" rel="noopener" class="back-btn">
+        Open full screen
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+      </a>
+    </div>
+
     <div class="section">
       <h2 class="section-title font-serif">Skills & Tools</h2>
       <div class="tags">
@@ -129,5 +184,7 @@
   <footer>
     <p>© 2026 Steffan Jones</p>
   </footer>
+
+  <script src="assets/carousel.js"></script>
 </body>
 </html>

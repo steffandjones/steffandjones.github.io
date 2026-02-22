@@ -92,6 +92,39 @@
     </div>
 
     <div class="section fade-in">
+      <h2 class="section-title font-serif">Gallery</h2>
+      <div class="carousel" aria-label="Project gallery">
+        <div class="carousel-viewport">
+          <div class="carousel-track">
+            <figure class="carousel-slide" data-caption="Custom 3D printed case housing the Arduino and motor">
+              <img src="assets/images/3DFanCase.JPG" alt="Arduino electronics inside 3D printed fan case">
+            </figure>
+            <figure class="carousel-slide" data-caption="LED arm illuminated during operation">
+              <img src="assets/images/3DFanLayout.png" alt="LED strip arm lit up in the dark">
+            </figure>
+            <figure class="carousel-slide" data-caption="Holographic fan in action">
+              <img src="assets/images/fangif.gif" alt="Holographic fan spinning with LED display">
+            </figure>
+          </div>
+          <button class="carousel-btn carousel-prev" aria-label="Previous image">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M15 18l-6-6 6-6"/>
+            </svg>
+          </button>
+          <button class="carousel-btn carousel-next" aria-label="Next image">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M9 18l6-6-6-6"/>
+            </svg>
+          </button>
+        </div>
+        <div class="carousel-footer">
+          <p class="carousel-caption"></p>
+          <div class="carousel-dots"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section fade-in">
       <h2 class="section-title font-serif">Skills &amp; Tools</h2>
       <div class="tags">
         <span class="tag">Arduino</span>
@@ -109,5 +142,7 @@
   <footer>
     <p>© 2026 Steffan Jones</p>
   </footer>
+
+  <script src="assets/carousel.js"></script>
 </body>
 </html>
