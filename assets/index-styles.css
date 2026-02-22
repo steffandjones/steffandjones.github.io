@@ -108,7 +108,30 @@ nav.scrolled {
   max-width: 72rem;
 }
 
-.hero-text-col h1 {
+.hero-grid {
+  display: flex;
+  gap: 3rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.hero-image {
+  width: 12rem;
+  height: 12rem;
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
   font-size: 6rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
@@ -474,7 +497,11 @@ svg {
     padding: 5rem 1.5rem 2rem;
   }
 
-  .hero-text-col h1 {
+  .hero-grid {
+    flex-direction: column;
+  }
+
+  .hero-text h1 {
     font-size: 3.75rem;
   }
 
@@ -493,7 +520,7 @@ svg {
 }
 
 @media (max-width: 1024px) {
-  .hero-text-col h1 {
+  .hero-text h1 {
     font-size: 4.5rem;
   }
 
