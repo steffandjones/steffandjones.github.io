@@ -11,8 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <!-- Preload hero image (LCP) -->
-  <link rel="preload" as="image"
-        href="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1600&auto=format&fit=crop&q=80">
+  <link rel="preload" as="image" href="assets/images/trackcover.jpeg">
 
   <!-- Shared CSS (cached across pages) -->
   <link rel="preload" href="/assets/styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -40,13 +39,7 @@
   <div class="hero">
     <div class="hero-media" aria-hidden="true">
       <img
-        src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&auto=format&fit=crop&q=80"
-        srcset="
-          https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=800&auto=format&fit=crop&q=80 800w,
-          https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1200&auto=format&fit=crop&q=80 1200w,
-          https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=1600&auto=format&fit=crop&q=80 1600w
-        "
-        sizes="(max-width: 768px) 800px, 1600px"
+        src="assets/images/trackcover.jpeg"
         loading="eager"
         decoding="async"
         width="1600"
@@ -97,11 +90,17 @@
       <div class="carousel" aria-label="Project gallery">
         <div class="carousel-viewport">
           <div class="carousel-track">
-            <figure class="carousel-slide" data-caption="Add a caption for this image">
-              <img src="assets/images/track-field-1.jpg" alt="Track and field image 1">
+            <figure class="carousel-slide" data-caption="Running the relay leg at the Ivy League Championships">
+              <img src="assets/images/trackpic.jpeg" alt="Steffan running the relay at Ivy League Championships">
             </figure>
-            <figure class="carousel-slide" data-caption="Add a caption for this image">
-              <img src="assets/images/track-field-2.jpg" alt="Track and field image 2">
+            <figure class="carousel-slide" data-caption="Harvard men's team celebrating the 2023 Ivy League Outdoor Championship">
+              <img src="assets/images/trackcover.jpeg" alt="Harvard 2023 Ivy League Outdoor Track & Field Champions">
+            </figure>
+            <figure class="carousel-slide" data-caption="Harvard sprints group">
+              <img src="assets/images/trackmob.png" alt="Harvard sprints squad">
+            </figure>
+            <figure class="carousel-slide" data-caption="Receiving an award at the Harvard indoor track facility">
+              <img src="assets/images/trackaward.jpeg" alt="Steffan receiving an award at Harvard">
             </figure>
           </div>
           <button class="carousel-btn carousel-prev" aria-label="Previous image">
