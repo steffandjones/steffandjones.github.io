@@ -139,11 +139,13 @@ nav.scrolled {
 
 /* Hero Carousel */
 .hero-carousel-wrap {
-  flex: 1;
+  flex: none;
+  width: 67%;
+  margin: 0 auto;
   position: relative;
   overflow: hidden;
   background: #f5f5f4;
-  min-height: 58vh;
+  height: 39vh;
 }
 
 .hero-carousel-track {
@@ -478,7 +480,8 @@ svg {
   }
 
   .hero-carousel-wrap {
-    min-height: 45vh;
+    width: 100%;
+    height: 35vh;
   }
 
   .section-title {
