@@ -528,3 +528,27 @@ svg {
     padding: 7rem 2rem 2.5rem;
   }
 }
+
+
+/* Email copy toast */
+.email-toast {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(1rem);
+  background: #1a1a1a;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  z-index: 9999;
+  white-space: nowrap;
+}
+
+.email-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
