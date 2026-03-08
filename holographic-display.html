@@ -48,7 +48,7 @@
 
     <div class="hero-content">
       <h1 class="hero-title font-serif">3D Holographic Display</h1>
-      <p class="hero-subtitle">Arduino-Based Holographic Fan Project</p>
+      <p class="hero-subtitle">ES50: Electrical Engineering · Final Project</p>
     </div>
   </div>
 
@@ -76,9 +76,13 @@
     <div class="section fade-in">
       <h2 class="section-title font-serif">Technical Details</h2>
       <p class="section-text">
-        The system uses Hall effect sensors to detect the angular position of the rotating arm, allowing precise timing of LED
-        activations to create coherent 3D images. Custom firmware handles high-speed data transfer to RGB LED strips while
-        maintaining refresh rates necessary for smooth visual persistence.
+        <strong>Electrical Engineering:</strong> ES50 (Introduction to Electrical Engineering) culminates in a final project built from scratch using the electronics fundamentals covered in the course. The holographic fan works on persistence of vision: a 1D strip of LEDs is mounted on a rotating arm, and by precisely timing which LEDs fire at each angular position as the arm spins, the eye integrates the individual flashes into a coherent 2D image that appears to float in mid-air. A Hall effect sensor is fixed to the housing and detects a magnet mounted on the rotating arm, producing one reference pulse per revolution that the microcontroller uses to synchronise LED timing with the arm's angular position at any given rotation speed.
+      </p>
+      <p class="section-text">
+        <strong>Software:</strong> The core of the software is a coordinate mapping algorithm: a 2D pixel image is converted into a lookup table specifying, for each angular step of the arm's rotation, which LEDs on the 1D strip should be active. As the arm spins, the Arduino reads the current angular position — interpolated from the Hall effect reference pulse and the measured rotation speed — and fires the corresponding LED subset with microsecond-level timing. This requires careful management of interrupt timing to ensure LED updates don't slip relative to the arm's actual position. A Bluetooth serial connection allows new images to be loaded wirelessly without stopping the device.
+      </p>
+      <p class="section-text">
+        <strong>CAD &amp; Fabrication:</strong> The housing presented a real mechanical design challenge: all electronics had to rotate with the arm, so the breadboard, battery, and Arduino needed to be packaged compactly and balanced about the rotation axis. The enclosure was designed in CAD and 3D printed, with integrated channels to route the LED strip cable along the inside of the arm so nothing protrudes or tangles during rotation. The assembly mounts directly to the motor shaft, with geometry sized to fit the specific fan motor used. Several printed iterations were needed to get the fit, balance, and cable routing right.
       </p>
     </div>
 

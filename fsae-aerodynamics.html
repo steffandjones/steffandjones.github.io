@@ -86,17 +86,19 @@
     <div class="section">
       <h2 class="section-title font-serif">Technical Approach</h2>
       <p class="section-text">
-        The aerodynamic design process began with extensive research into FSAE rules and regulations, followed by computational fluid dynamics (CFD) analysis using SimScale and ANSYS Fluent. I developed multi-element wing profiles that conformed to FSAE constraints while generating significant negative lift coefficients.
-      </p>
-      <p class="section-text">Key design considerations included:</p>
-      <p class="section-text">
-        <strong>Front Wing Design:</strong> Created a split front wing configuration with adjustable angle of attack to balance front-end downforce and manage airflow to the underbody and radiators.
+        <strong>Mechanical:</strong> Designed front and rear wing assemblies and underbody aerodynamics from scratch, working within FSAE's strict dimensional rules. The split front wing featured mechanically adjustable angle of attack — set in the pits between runs — to tune front-end balance for different track configurations. The rear wing used a multi-element design combining a main plane and flap, with end plates sized to minimise tip vortex losses and improve flow two-dimensionality. Collaborated closely with the chassis team to integrate diffuser geometry and floor panelling that could exploit ground effect at the car's operating speeds.
       </p>
       <p class="section-text">
-        <strong>Rear Wing Assembly:</strong> Designed a multi-element rear wing with endplates to maximize downforce generation while maintaining aerodynamic balance with the front wing.
+        <strong>CFD &amp; Simulation:</strong> Used SimScale for early-stage design iteration — fast turnaround allowed multiple configurations to be compared before committing to detailed analysis — and ANSYS Fluent for higher-fidelity validation of the final design. Key outputs were lift coefficient, drag coefficient, and centre of pressure location. Centre of pressure was particularly critical: an imbalanced distribution between front and rear axles would compromise handling, so CFD was used to tune the aero balance as wing geometry evolved. Mesh sensitivity studies were run to verify numerical accuracy, and boundary conditions were matched to the expected speed range of FSAE competition circuits.
       </p>
       <p class="section-text">
-        <strong>Underbody Aerodynamics:</strong> Worked with the chassis team to implement diffuser geometry and floor design to exploit ground effect principles.
+        <strong>Materials &amp; Fabrication:</strong> Material selection was a core design decision — the wings had to hold aerodynamic surface accuracy under load while remaining as light as possible. Carbon fibre was chosen for the skin, with foam cores providing the structural substrate for the layup. Wing elements were built in the composite wet rooms: carbon fibre fabric was cut to pattern, wetted with resin, and laid over foam cores in sequence before vacuum bagging for cure. 3D printed wing profiles served as geometry references and mandrels throughout the process. Multiple prototypes were built at each stage to check surface accuracy against the CAD model and resolve any warping or dimensional error before committing to final parts.
+      </p>
+      <p class="section-text">
+        <strong>Documentation:</strong> The project culminated in a 100+ page technical paper documenting every phase of the aerodynamic design: background theory, FSAE rule constraints, CFD methodology and sensitivity analysis, material selection rationale, composite manufacturing process, and test and validation results. The paper was written to a standard that would allow a future Crimson Motorsport team to understand every decision and build on it. Alongside it, a full thesis presentation was prepared and delivered to the engineering faculty, distilling the technical highlights into a structured talk.
+      </p>
+      <p class="section-text">
+        <strong>Leadership:</strong> Led the aerodynamics sub-team from initial concept through to physical parts, managing workload and keeping the design progressing against the capstone timeline. Regular cross-team coordination with chassis, powertrain, and suspension was essential — wing mounting points had to be incorporated into the chassis design from early on, and radiator sizing directly affected front wing airflow management. Ran structured design reviews within the aero team, supported members through CFD setup and composite layup, and presented progress to the broader Crimson Motorsport group throughout the year.
       </p>
     </div>
 

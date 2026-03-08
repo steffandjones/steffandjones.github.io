@@ -80,16 +80,16 @@
     <div class="section fade-in delay-2">
       <h2 class="section-title font-serif">Technical Design</h2>
       <p class="section-text">
-        Almost everything on Blue Mamba was made by the team from scratch. The chassis, arm, and grabber were all custom-designed in SolidWorks and fabricated in-house. The wheels were cast using Dragon Skin silicone rubber, chosen for its high grip and durability across the competition surface. The drive motors and gearbox were salvaged from an old power drill and repurposed into the drivetrain, keeping the build resourceful and low-cost without sacrificing performance.
+        <strong>CAD:</strong> Designed all custom components — chassis, arm, grabber, and wheel moulds — in SolidWorks, building parametric assemblies and engineering drawings for each part before it was made. The course emphasised the discipline of designing for manufacture: running interference checks, specifying tolerances, and rethinking geometry when a first prototype revealed problems on the machine. CAD was not a one-time step but a continuous loop — parts were revised in SolidWorks, remade, tested, and revised again throughout the project.
       </p>
       <p class="section-text">
-        <strong>Mechanical Systems:</strong> The drivetrain used the reclaimed drill motors with independent control for differential steering. The arm mechanism used custom linkages to achieve the required reach and lifting capacity, with a grabber designed specifically to handle both balls and cubes reliably. CAD modeling in SolidWorks ensured all components fit within size constraints and maintained proper weight distribution.
+        <strong>Workshop &amp; Fabrication:</strong> ES51 functions as Harvard's introduction to the engineering workshop — students are trained on the machines before designing parts they'll make on them. The curriculum covered CNC milling for precision metal work, laser cutting for flat-pattern parts from sheet stock, and FDM 3D printing for rapid prototyping of complex geometry. Dragon Skin silicone rubber wheels were cast in-house using a two-part mould: liquid silicone was mixed, poured, and demoulded after cure. The drive motors and gearbox came from a disassembled power drill — stripped, cleaned, and remounted into a custom chassis bracket for differential steering.
       </p>
       <p class="section-text">
-        <strong>Control &amp; Programming:</strong> A microcontroller-based system coordinated drivetrain movement with arm positioning. Custom algorithms optimized the scoring strategy and movement sequencing across the competition.
+        <strong>Mechanical:</strong> The chassis was designed around a low centre of gravity, with all mounting points for the drivetrain, arm pivot, and electronics laid out in SolidWorks before any material was cut. The arm used a multi-link mechanism to achieve the reach and lift height needed to place objects onto scoring podiums at varying heights. The grabber was designed to close passively on contact with both balls and cubes — the two object types in the competition — without requiring the operator to switch between grip modes during a run.
       </p>
       <p class="section-text">
-        This course provided hands-on experience with the complete engineering design process, from initial concept through prototyping, testing, iteration, and final competition.
+        <strong>Software:</strong> A microcontroller served as the central control unit, receiving input from the RC receiver and translating commands into coordinated motion across the drivetrain and arm. Custom code managed the sequencing of scoring runs — drive to position, lower arm, close grabber, raise, drive to podium, extend, release — with timing tuned through repeated competition practice. The control architecture was kept modifiable so the team could adjust scoring strategy between rounds based on what was working.
       </p>
     </div>
 

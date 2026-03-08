@@ -50,7 +50,7 @@
 
     <div class="hero-content">
       <h1 class="hero-title font-serif">Balsa Wood Bridge</h1>
-      <p class="hero-subtitle">Structural Engineering &amp; FEA Analysis</p>
+      <p class="hero-subtitle">ES120: Structural Mechanics · Civil Engineering</p>
     </div>
   </div>
 
@@ -58,9 +58,7 @@
     <div class="section fade-in">
       <h2 class="section-title font-serif">Project Overview</h2>
       <p class="section-text">
-        Designed and constructed a lightweight balsa wood bridge capable of lifting approximately 250lbs, nearly 20 times its own weight. The project combined
-        structural analysis, material science, and precision fabrication to create an efficient load-bearing structure. The bridge failed at the glue joints;
-        Professor Vlassak noted that had the adhesive held, it would have been capable of lifting significantly more.
+        ES120: Engineering Sciences 120 (Structural Mechanics) is Harvard's civil engineering fundamentals course. The final project challenged students to design and build a lightweight balsa wood bridge capable of supporting maximum load relative to its own weight. Our bridge lifted approximately 250lbs — nearly 20 times its own weight. The bridge failed at the glue joints; Professor Vlassak noted that had the adhesive held, it would have been capable of lifting significantly more.
       </p>
     </div>
 
@@ -79,9 +77,13 @@
     <div class="section fade-in">
       <h2 class="section-title font-serif">Technical Details</h2>
       <p class="section-text">
-        Using finite element analysis in ANSYS, I optimized the truss configuration to efficiently distribute loads while minimizing material usage.
-        The design employed Warren truss geometry with strategic reinforcements at high-stress joints. Careful attention to grain direction and
-        adhesive application ensured consistent joint strength throughout the structure.
+        <strong>Structural Design:</strong> Employed Warren truss geometry — a triangulated arrangement of diagonal members — selected because it distributes load so that each member carries primarily axial force (tension or compression) rather than bending, making efficient use of balsa wood's high strength along the grain. Members were oriented so grain direction aligned with the primary load axis in each element. Reinforcements were added only at the joints predicted by FEA to see the highest stress concentrations, avoiding unnecessary weight additions elsewhere.
+      </p>
+      <p class="section-text">
+        <strong>Analysis:</strong> Finite element analysis in ANSYS was used to model the full truss under the applied loading, generating stress and deflection distributions across every member. This allowed the design to be iterated computationally before fabrication — cross-sections were adjusted, members added or removed, and reinforcement positions refined based on where the model showed stress concentrations. The model identified the glue joints at the most heavily loaded nodes as the critical failure point, a prediction that was confirmed when the bridge failed there during load testing.
+      </p>
+      <p class="section-text">
+        <strong>Fabrication:</strong> Construction required methodical assembly: each member was cut to length, grain direction verified, and dry-fitted before any adhesive was applied. Glue quantities were carefully controlled — too little produced a weak joint, too much added weight without a proportional strength gain. Dimensional tolerances were held under 1mm throughout. When the bridge failed under test, it failed at the adhesive joints rather than within the balsa members. Professor Vlassak's assessment was that the structural design had significant headroom beyond the recorded failure load, and that with stronger joint execution the bridge would have carried considerably more.
       </p>
     </div>
 
