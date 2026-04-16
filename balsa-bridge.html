@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balsa Wood Bridge — Steffan Jones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shared.css">
+<link rel="stylesheet" href="assets/project.css">
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">STEFFAN JONES</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="index.html#roles">Roles</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+    </ul>
+    <a href="assets/steffan_resume.pdf" class="nav-resume" download>Resume</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-text">
+    <a href="index.html" class="back-link">← Back to portfolio</a>
+    <span class="page-badge badge-project">ES120 · Harvard</span>
+    <h1 class="page-title">BALSA<br>BRIDGE</h1>
+    <p class="page-subtitle">Warren truss bridge lifting ~250lbs — nearly 20× its own weight. FEA-optimised in ANSYS, fabricated to sub-1mm tolerances. Failed at adhesive joints, not the structure.</p>
+  </div>
+  <div class="page-hero-img">
+    <img src="https://steffandjones.github.io/assets/images/BalsaBridge.jpeg" alt="Balsa Bridge load test">
+  </div>
+</div>
+<div class="divider"></div>
+<section><div class="container"><div class="overview-grid fade-up">
+  <div class="overview-text">
+    <p>ES120 (Structural Mechanics) is Harvard's civil engineering fundamentals course. The final project challenged students to design and build a lightweight balsa wood bridge capable of supporting maximum load relative to its own weight. Our bridge lifted approximately 250lbs — nearly 20 times its own weight. The bridge failed at the glue joints; Professor Vlassak noted that had the adhesive held, it would have been capable of lifting significantly more.</p>
+    <h4>STRUCTURAL DESIGN</h4>
+    <p>Employed Warren truss geometry — a triangulated arrangement of diagonal members — selected because it distributes load so that each member carries primarily axial force (tension or compression) rather than bending, making efficient use of balsa wood's high strength along the grain. Members were oriented so grain direction aligned with the primary load axis. Reinforcements added only at joints predicted by FEA to see the highest stress concentrations, avoiding unnecessary weight additions elsewhere.</p>
+    <h4>ANALYSIS</h4>
+    <p>Finite element analysis in ANSYS was used to model the full truss under applied loading, generating stress and deflection distributions across every member. This allowed the design to be iterated computationally before fabrication — cross-sections adjusted, members added or removed, and reinforcement positions refined based on stress concentrations. The model identified glue joints at the most heavily loaded nodes as the critical failure point — a prediction confirmed when the bridge failed there during load testing.</p>
+    <h4>FABRICATION</h4>
+    <p>Methodical assembly: each member cut to length, grain direction verified, dry-fitted before any adhesive was applied. Glue quantities carefully controlled — too little produced a weak joint, too much added weight without proportional strength gain. Dimensional tolerances held under 1mm throughout. The bridge failed at adhesive joints rather than within the balsa members — structural design had significant headroom beyond the recorded failure load.</p>
+  </div>
+  <div>
+    <div class="meta-list">
+      <div class="meta-row"><span class="meta-label">Course</span><span class="meta-value">ES120: Structural Mechanics</span></div>
+      <div class="meta-row"><span class="meta-label">Institution</span><span class="meta-value">Harvard University</span></div>
+      <div class="meta-row"><span class="meta-label">Result</span><span class="meta-value">~250lbs lifted, ~20:1 load-to-weight ratio</span></div>
+      <div class="meta-row"><span class="meta-label">Failure mode</span><span class="meta-value">Adhesive joints — structural capacity estimated well beyond recorded load</span></div>
+    </div>
+    <div class="skills-strip">
+      <span class="skill-pill">Structural Analysis</span><span class="skill-pill">FEA</span><span class="skill-pill">ANSYS</span><span class="skill-pill">Material Science</span><span class="skill-pill">Load Testing</span><span class="skill-pill">Fabrication</span><span class="skill-pill">Warren Truss</span>
+    </div>
+  </div>
+</div></div></section>
+<div class="divider"></div>
+<section style="background:var(--off);"><div class="container">
+  <p class="section-label">Gallery</p><h2 class="section-title">IMAGES</h2>
+  <div class="gallery-grid cols-2 fade-up">
+    <div class="gallery-img"><img src="https://steffandjones.github.io/assets/images/BalsaBridge.jpeg" alt="Load testing the bridge"></div>
+    <div class="gallery-img"><img src="https://steffandjones.github.io/assets/images/balsabridgebuild.JPG" alt="Bridge construction in progress"></div>
+  </div>
+</div></section>
+<div class="divider"></div>
+<div class="links-section"><div class="container">
+  <p class="section-label">Links</p><h2 class="section-title">RESOURCES</h2>
+  <div class="links-grid">
+    <label class="upload-slot">Upload report or article <input type="file" accept=".pdf" style="display:none"></label>
+  </div>
+</div></div>
+<div class="nav-bottom"><a href="index.html#projects">← All projects</a><a href="rocket-propulsion.html">Next: Rocket Propulsion →</a></div>
+<footer>
+  <p>© 2026 Steffan Jones</p>
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</footer>
+<script src="assets/shared.js"></script>
+</body>
+</html>

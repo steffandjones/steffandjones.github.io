@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steffan Jones — Mechanical Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shared.css">
+<style>
+/* BUTTONS */
+.btn { display: inline-flex; align-items: center; font-family: var(--body); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.02em; padding: 0.7rem 1.6rem; border-radius: 1px; text-decoration: none; transition: all 0.18s; cursor: pointer; border: 1px solid transparent; }
+.btn-primary { background: var(--ink); color: var(--white); }
+.btn-primary:hover { background: #333; }
+.btn-outline { background: transparent; color: var(--ink); border-color: var(--border-mid); }
+.btn-outline:hover { border-color: var(--ink); }
+
+/* HERO */
+#hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+.hero-text { display: flex; flex-direction: column; justify-content: center; padding: 8rem 4rem 5rem 3rem; }
+.hero-eyebrow { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-light); margin-bottom: 1.5rem; }
+.hero-name { font-family: var(--serif); font-size: clamp(4.5rem, 9vw, 8rem); line-height: 0.95; letter-spacing: 0.03em; color: var(--ink); margin-bottom: 1.75rem; }
+.hero-sub { font-size: 0.98rem; font-weight: 300; color: var(--ink-mid); line-height: 1.85; margin-bottom: 2.5rem; max-width: 400px; }
+.hero-ctas { display: flex; gap: 0.875rem; flex-wrap: wrap; }
+.hero-image { background: #ECEAE4; position: relative; overflow: hidden; border-left: 1px solid var(--border); min-height: 100vh; }
+.hero-image img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
+.hero-image .img-ph { position: absolute; inset: 0; }
+
+/* STATS STRIP */
+.stats-strip { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.stat-item { padding: 2rem 2.5rem; border-right: 1px solid var(--border); }
+.stat-item:last-child { border-right: none; }
+.stat-num { font-family: var(--serif); font-size: 2.5rem; letter-spacing: 0.02em; color: var(--ink); line-height: 1; margin-bottom: 0.3rem; }
+.stat-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); }
+
+/* ABOUT */
+#about { background: var(--off); padding: 6rem 3rem; }
+.container { max-width: 1060px; margin: 0 auto; }
+.section-title { font-family: var(--serif); font-size: clamp(2.2rem, 5vw, 3.5rem); line-height: 1.0; letter-spacing: 0.03em; color: var(--ink); margin-bottom: 1.5rem; }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3rem; align-items: start; }
+.about-photo { aspect-ratio: 3/4; background: #DEDAD3; border-radius: 1px; overflow: hidden; position: relative; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.about-photo .img-ph { position: absolute; inset: 0; }
+.about-bio p { font-size: 0.95rem; color: var(--ink-mid); font-weight: 300; line-height: 1.9; margin-bottom: 1rem; }
+.about-bio p:last-child { margin-bottom: 0; }
+.about-facts { display: flex; flex-direction: column; gap: 1.1rem; border-top: 1px solid var(--border); padding-top: 1.75rem; margin-top: 1.75rem; }
+.fact-row { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; align-items: baseline; }
+.fact-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-light); }
+.fact-value { font-size: 0.88rem; color: var(--ink); line-height: 1.5; }
+
+/* SKILLS */
+#skills { padding: 6rem 3rem; }
+.skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); margin-top: 2.5rem; }
+.skill-card { padding: 1.75rem; border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); transition: background 0.2s; }
+.skill-card:hover { background: var(--off); }
+.skill-card:nth-child(3n) { border-right: none; }
+.skill-card:nth-child(n+4) { border-bottom: none; }
+.skill-card h3 { font-size: 0.82rem; font-weight: 500; color: var(--ink); margin-bottom: 0.75rem; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.skill-tag { font-size: 0.68rem; color: var(--ink-mid); border: 1px solid var(--border-mid); padding: 0.16rem 0.55rem; }
+
+/* CARD GRIDS */
+.card-section { padding: 6rem 0; }
+.card-section-header { padding: 0 3rem; max-width: 1060px; margin: 0 auto 3rem; }
+.card-grid { border-top: 1px solid var(--border); }
+.project-full { display: grid; grid-template-columns: 1fr 1fr; min-height: 420px; background: var(--white); border-bottom: 1px solid var(--border); text-decoration: none; color: inherit; transition: opacity 0.18s; }
+.project-full:hover { opacity: 0.9; }
+.project-full.reverse { direction: rtl; }
+.project-full.reverse > * { direction: ltr; }
+.project-full-img { background: #DEDAD3; overflow: hidden; position: relative; }
+.project-full-img img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
+.project-full-img .img-ph { position: absolute; inset: 0; }
+.project-full-body { display: flex; flex-direction: column; justify-content: center; padding: 3rem; border-left: 1px solid var(--border); }
+.project-full.reverse .project-full-body { border-left: none; border-right: 1px solid var(--border); }
+.project-row { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--border); }
+.project-card { background: var(--white); display: flex; flex-direction: column; border-right: 1px solid var(--border); text-decoration: none; color: inherit; transition: background 0.18s; }
+.project-card:hover { background: var(--off); }
+.project-card:last-child { border-right: none; }
+.project-card-img { aspect-ratio: 4/3; background: #DEDAD3; overflow: hidden; flex-shrink: 0; position: relative; }
+.project-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; position: absolute; inset: 0; }
+.project-card-img .img-ph { position: absolute; inset: 0; }
+.project-card-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+.project-badge { display: inline-block; font-size: 0.65rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.55rem; border-radius: 1px; margin-bottom: 0.75rem; width: fit-content; }
+.project-title { font-family: var(--serif); font-size: 1.4rem; line-height: 1.1; letter-spacing: 0.02em; color: var(--ink); margin-bottom: 0.6rem; }
+.project-full .project-title { font-size: 1.8rem; }
+.project-desc { font-size: 0.87rem; color: var(--ink-mid); font-weight: 300; line-height: 1.8; flex: 1; margin-bottom: 1rem; }
+.project-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.project-tag { font-size: 0.66rem; color: var(--ink-light); border: 1px solid var(--border); padding: 0.12rem 0.5rem; }
+.arrow-link { font-size: 0.75rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-light); margin-top: 1.25rem; display: inline-block; }
+
+/* CONTACT */
+#contact { background: var(--ink); padding: 6rem 3rem; }
+#contact .section-label { color: rgba(255,255,255,0.3); }
+#contact .section-title { color: var(--white); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3rem; align-items: start; }
+.contact-form { display: flex; flex-direction: column; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+.form-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.3); }
+.form-input, .form-textarea { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 1px; padding: 0.72rem 1rem; font-family: var(--body); font-size: 0.9rem; color: var(--white); outline: none; transition: border-color 0.18s; width: 100%; }
+.form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.2); }
+.form-input:focus, .form-textarea:focus { border-color: rgba(255,255,255,0.35); }
+.form-textarea { resize: vertical; min-height: 110px; }
+.btn-light { background: var(--white); color: var(--ink); margin-top: 0.35rem; }
+.btn-light:hover { background: #eee; }
+.contact-info { display: flex; flex-direction: column; gap: 1.75rem; border-left: 1px solid rgba(255,255,255,0.08); padding-left: 3.5rem; }
+.contact-item { display: flex; flex-direction: column; gap: 0.25rem; }
+.contact-item-label { font-size: 0.68rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.28); }
+.contact-item-value { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.6; }
+.contact-item-value a { color: rgba(255,255,255,0.55); text-decoration: none; }
+.contact-item-value a:hover { color: rgba(255,255,255,0.9); }
+
+/* RESUME SECTION */
+.resume-section { background: var(--off); padding: 4rem 3rem; border-top: 1px solid var(--border); }
+.resume-inner { max-width: 1060px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+.resume-text h3 { font-family: var(--serif); font-size: 1.6rem; letter-spacing: 0.03em; color: var(--ink); margin-bottom: 0.4rem; }
+.resume-text p { font-size: 0.88rem; color: var(--ink-mid); font-weight: 300; }
+
+@media (max-width: 900px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { display: none; }
+  #hero { grid-template-columns: 1fr; }
+  .hero-image { min-height: 60vw; border-left: none; border-top: 1px solid var(--border); }
+  .hero-text { padding: 7rem 1.5rem 3rem; }
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  #about { padding: 4.5rem 1.5rem; }
+  #skills { padding: 4.5rem 1.5rem; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .card-section-header { padding: 0 1.5rem; }
+  .project-full { grid-template-columns: 1fr; direction: ltr !important; }
+  .project-full-img { min-height: 50vw; }
+  .project-full-body { border-left: none !important; border-right: none !important; border-top: 1px solid var(--border); padding: 2rem 1.5rem; }
+  .project-row { grid-template-columns: 1fr; }
+  .project-card { border-right: none; border-bottom: 1px solid var(--border); }
+  #contact { padding: 4.5rem 1.5rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .contact-info { border-left: none; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 2rem; }
+  .resume-inner { flex-direction: column; align-items: flex-start; }
+  footer { flex-direction: column; gap: 1rem; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">STEFFAN JONES</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#roles">Roles</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="assets/steffan_resume.pdf" class="nav-resume" id="nav-resume-btn" download>Resume</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" style="padding:0;">
+  <div class="hero-text">
+    <p class="hero-eyebrow">Mechanical Engineer · Harvard Graduate · International Athlete</p>
+    <h1 class="hero-name">STEFFAN<br>JONES</h1>
+    <p class="hero-sub">Product design, aerodynamics, embedded systems, and venture development. Building things that work — at every scale.</p>
+    <div class="hero-ctas">
+      <a href="#roles" class="btn btn-primary">View my work</a>
+      <a href="#contact" class="btn btn-outline">Get in touch</a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="https://steffandjones.github.io/assets/images/headerimage.png" alt="Steffan Jones">
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-strip">
+  <div class="stat-item"><div class="stat-num">46.7s</div><div class="stat-label">400m personal best</div></div>
+  <div class="stat-item"><div class="stat-num">25+</div><div class="stat-label">Training hours per week</div></div>
+  <div class="stat-item"><div class="stat-num">2</div><div class="stat-label">Engineering internships</div></div>
+  <div class="stat-item"><div class="stat-num">8+</div><div class="stat-label">Projects &amp; roles</div></div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">About</p>
+    <div class="about-grid fade-up">
+      <div class="about-photo">
+        <div class="img-ph"><div class="img-ph-line"></div><span class="img-ph-text">Photo</span><div class="img-ph-line"></div></div>
+      </div>
+      <div>
+        <h2 class="section-title">ENGINEER,<br>BUILDER,<br>ATHLETE</h2>
+        <div class="about-bio">
+          <p>I graduated from Harvard University in May 2025 with an SB in Mechanical Engineering. During my time there, I balanced rigorous academics with competing as a Varsity Track &amp; Field athlete — training over 25 hours per week while leading aerodynamics for Harvard's first FSAE car, serving as Head Course Assistant for Heat Transfer, and contributing to the Ivy League's first liquid bi-propellant rocket.</p>
+          <p>I've interned at Aston Martin Lagonda and Alesi Surgical, run a tutoring practice, and am currently Venture &amp; Product Development Manager at EQL Tech — while building two apps on the side.</p>
+          <p>Represented Wales internationally as a 400m sprinter (46.7s PB). The discipline and resilience of elite sport shapes how I approach every engineering challenge.</p>
+        </div>
+        <div class="about-facts">
+          <div class="fact-row"><span class="fact-label">Current role</span><span class="fact-value">Venture &amp; Product Development Manager, EQL Tech</span></div>
+          <div class="fact-row"><span class="fact-label">Education</span><span class="fact-value">SB Mechanical Engineering, Harvard University (2025)</span></div>
+          <div class="fact-row"><span class="fact-label">Based in</span><span class="fact-value">Wales, United Kingdom</span></div>
+          <div class="fact-row"><span class="fact-label">Athletics</span><span class="fact-value">International 400m sprinter · 46.7s PB · Harvard Varsity</span></div>
+          <div class="fact-row"><span class="fact-label">Open to</span><span class="fact-value">Engineering roles, freelance &amp; consulting</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Capabilities</p>
+    <h2 class="section-title">SKILLS</h2>
+    <div class="skills-grid fade-up">
+      <div class="skill-card"><h3>Mechanical &amp; Structural</h3><div class="skill-tags"><span class="skill-tag">SolidWorks</span><span class="skill-tag">CAD</span><span class="skill-tag">FEA</span><span class="skill-tag">ANSYS</span><span class="skill-tag">Composites</span><span class="skill-tag">Fabrication</span><span class="skill-tag">AutoCAD</span></div></div>
+      <div class="skill-card"><h3>Aerodynamics &amp; CFD</h3><div class="skill-tags"><span class="skill-tag">SimScale</span><span class="skill-tag">ANSYS Fluent</span><span class="skill-tag">COMSOL</span><span class="skill-tag">Aerodynamic Analysis</span><span class="skill-tag">Ground Effect</span><span class="skill-tag">Wing Design</span></div></div>
+      <div class="skill-card"><h3>Software &amp; Embedded</h3><div class="skill-tags"><span class="skill-tag">Python</span><span class="skill-tag">MATLAB</span><span class="skill-tag">C/C++</span><span class="skill-tag">Arduino</span><span class="skill-tag">Firmware</span><span class="skill-tag">IoT</span><span class="skill-tag">Data Analysis</span></div></div>
+      <div class="skill-card"><h3>Venture &amp; Product</h3><div class="skill-tags"><span class="skill-tag">Product Strategy</span><span class="skill-tag">Go-to-market</span><span class="skill-tag">Startup Operations</span><span class="skill-tag">Partnerships</span><span class="skill-tag">Market Research</span></div></div>
+      <div class="skill-card"><h3>Testing &amp; R&amp;D</h3><div class="skill-tags"><span class="skill-tag">Structural Testing</span><span class="skill-tag">Validation</span><span class="skill-tag">ISO 13485</span><span class="skill-tag">Electronics Debugging</span><span class="skill-tag">Field Testing</span></div></div>
+      <div class="skill-card"><h3>Leadership &amp; Communication</h3><div class="skill-tags"><span class="skill-tag">Team Leadership</span><span class="skill-tag">Technical Writing</span><span class="skill-tag">Teaching</span><span class="skill-tag">Mentorship</span><span class="skill-tag">Bilingual (EN/CY)</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- CURRENT ROLES -->
+<div class="card-section" id="roles">
+  <div class="card-section-header fade-up">
+    <p class="section-label">Current &amp; Recent Roles</p>
+    <h2 class="section-title">ROLES</h2>
+  </div>
+  <div class="card-grid">
+
+    <a href="eql-tech.html" class="project-full fade-up">
+      <div class="project-full-img">
+        <div class="img-ph"><div class="img-ph-line"></div><span class="img-ph-text">EQL Tech</span><div class="img-ph-line"></div></div>
+      </div>
+      <div class="project-full-body">
+        <span class="project-badge badge-current">Current role</span>
+        <h3 class="project-title">EQL TECH</h3>
+        <p class="project-desc">Venture &amp; Product Development Manager — leading product strategy, partnerships, and go-to-market for a tech recruitment startup placing top engineers at AI-first companies.</p>
+        <div class="project-tags"><span class="project-tag">Venture Development</span><span class="project-tag">Product Strategy</span><span class="project-tag">Partnerships</span><span class="project-tag">AI Recruitment</span></div>
+        <span class="arrow-link">View role →</span>
+      </div>
+    </a>
+
+    <div class="project-row fade-up">
+      <a href="pebl-cic.html" class="project-card">
+        <div class="project-card-img">
+          <img src="https://steffandjones.github.io/assets/images/PEBL_Cover.png" alt="PEBL-CIC">
+        </div>
+        <div class="project-card-body">
+          <span class="project-badge badge-internship">Completed contract</span>
+          <h3 class="project-title">PEBL-CIC</h3>
+          <p class="project-desc">Product Design Engineer — firmware, embedded systems, and IoT for agricultural and coastal monitoring devices. Sonar scanning off the Pembrokeshire coast.</p>
+          <div class="project-tags"><span class="project-tag">Firmware</span><span class="project-tag">Embedded Systems</span><span class="project-tag">IoT</span><span class="project-tag">Sonar</span></div>
+          <span class="arrow-link">View role →</span>
+        </div>
+      </a>
+      <a href="tutoring.html" class="project-card">
+        <div class="project-card-img">
+          <div class="img-ph"><div class="img-ph-line"></div><span class="img-ph-text">Tutoring image</span><div class="img-ph-line"></div></div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-badge badge-current">Ongoing</span>
+          <h3 class="project-title">TUTORING</h3>
+          <p class="project-desc">Closing the guidance gap for Welsh students aiming for top universities — STEM tutoring, university admissions, and bilingual support.</p>
+          <div class="project-tags"><span class="project-tag">Education</span><span class="project-tag">Mentorship</span><span class="project-tag">STEM</span><span class="project-tag">Bilingual</span></div>
+          <span class="arrow-link">View →</span>
+        </div>
+      </a>
+      <a href="freelance.html" class="project-card">
+        <div class="project-card-img">
+          <div class="img-ph"><div class="img-ph-line"></div><span class="img-ph-text">Engineering image</span><div class="img-ph-line"></div></div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-badge badge-current">Available</span>
+          <h3 class="project-title">FREELANCE ENGINEERING</h3>
+          <p class="project-desc">Contract engineering and technical consulting — CAD, CFD, FEA, embedded systems, and end-to-end product development.</p>
+          <div class="project-tags"><span class="project-tag">CAD</span><span class="project-tag">CFD</span><span class="project-tag">FEA</span><span class="project-tag">Consulting</span></div>
+          <span class="arrow-link">View services →</span>
+        </div>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- INTERNSHIPS -->
+<div class="card-section" id="internships">
+  <div class="card-section-header fade-up">
+    <p class="section-label">Industry Experience</p>
+    <h2 class="section-title">INTERNSHIPS</h2>
+  </div>
+  <div class="card-grid">
+    <div class="project-row fade-up">
+      <a href="aston-martin.html" class="project-card">
+        <div class="project-card-img">
+          <img src="https://steffandjones.github.io/assets/images/AM2.JPG" alt="Aston Martin">
+        </div>
+        <div class="project-card-body">
+          <span class="project-badge badge-internship">Internship</span>
+          <h3 class="project-title">ASTON MARTIN</h3>
+          <p class="project-desc">Automotive engineering at Aston Martin Lagonda — CAD, testing &amp; validation, and manufacturing exposure in a high-performance vehicle R&amp;D environment.</p>
+          <div class="project-tags"><span class="project-tag">Automotive</span><span class="project-tag">CAD</span><span class="project-tag">R&amp;D</span><span class="project-tag">Testing</span></div>
+          <span class="arrow-link">View internship →</span>
+        </div>
+      </a>
+      <a href="alesi-surgical.html" class="project-card">
+        <div class="project-card-img">
+          <img src="https://steffandjones.github.io/assets/images/AS6.jpeg" alt="Alesi Surgical">
+        </div>
+        <div class="project-card-body">
+          <span class="project-badge badge-internship">Internship</span>
+          <h3 class="project-title">ALESI SURGICAL</h3>
+          <p class="project-desc">Medical device development on the Ultravision 2 ION+ Bipolar — electronic test rigs, mechanical design, and ISO 13485-compliant validation testing.</p>
+          <div class="project-tags"><span class="project-tag">Medical Devices</span><span class="project-tag">Electronics</span><span class="project-tag">Testing</span><span class="project-tag">ISO 13485</span></div>
+          <span class="arrow-link">View internship →</span>
+        </div>
+      </a>
+      <a href="course-assistant.html" class="project-card">
+        <div class="project-card-img">
+          <div class="img-ph"><div class="img-ph-line"></div><span class="img-ph-text">Teaching image</span><div class="img-ph-line"></div></div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-badge badge-internship">Harvard</span>
+          <h3 class="project-title">HEAD COURSE ASSISTANT</h3>
+          <p class="project-desc">Led teaching for ES183: Introduction to Heat Transfer at Harvard — running recitations, developing materials, and managing a team of teaching fellows.</p>
+          <div class="project-tags"><span class="project-tag">Heat Transfer</span><span class="project-tag">Leadership</span><span class="project-tag">Thermodynamics</span></div>
+          <span class="arrow-link">View →</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- HARVARD PROJECTS -->
+<div class="card-section" id="projects">
+  <div class="card-section-header fade-up">
+    <p class="section-label">Harvard Projects</p>
+    <h2 class="section-title">PROJECTS</h2>
+  </div>
+  <div class="card-grid">
+
+    <a href="fsae-aerodynamics.html" class="project-full fade-up">
+      <div class="project-full-img">
+        <img src="https://steffandjones.github.io/assets/images/FSAE_Cover.png" alt="FSAE Aerodynamics">
+      </div>
+      <div class="project-full-body">
+        <span class="project-badge badge-project">Senior Capstone · Thesis</span>
+        <h3 class="project-title">FSAE AERODYNAMICS</h3>
+        <p class="project-desc">Aerodynamics Co-Lead for Harvard's first FSAE car (Crimson Motorsport). Designed the complete aerodynamic package — front and rear wings, underbody — using CFD in SimScale and ANSYS Fluent, and manufactured in carbon fibre composite. 100+ page technical thesis.</p>
+        <div class="project-tags"><span class="project-tag">CFD</span><span class="project-tag">SolidWorks</span><span class="project-tag">SimScale</span><span class="project-tag">ANSYS</span><span class="project-tag">Composites</span><span class="project-tag">Thesis</span></div>
+        <span class="arrow-link">View project →</span>
+      </div>
+    </a>
+
+    <div class="project-row fade-up">
+      <a href="es51.html" class="project-card">
+        <div class="project-card-img">
+          <img src="https://steffandjones.github.io/assets/images/bluemambaIMAGE.png" alt="Blue Mamba ES51">
+        </div>
+        <div class="project-card-body">
+          <span class="project-badge badge-project">ES51</span>
+          <h3 class="project-title">BLUE MAMBA RC VEHICLE</h3>
+          <p class="project-desc">All-terrain autonomous RC vehicle with robotic arm — custom chassis, silicone-cast wheels, and repurposed drill motors. Built for Harvard's engineering design competition.</p>
+          <div class="project-tags"><span class="project-tag">Robotics</span><span class="project-tag">CAD</span><span class="project-tag">Fabrication</span><span class="project-tag">Automation</span></div>
+          <span class="arrow-link">View project →</span>
+        </div>
+      </a>
+      <a href="holographic-display.html" class="project-card">
+        <div class="project-card-img">
+          <img src="https://steffandjones.github.io/assets/images/p2image.jpg" alt="Holographic Display">
+        </div>
+        <div class="project-card-body">
+          <span class="project-badge badge-project">ES50</span>
+          <h3 class="project-title">3D HOLOGRAPHIC DISPLAY</h3>
+          <p class="project-desc">Arduino-based persistence-of-vision holographic fan with custom PCB, Bluetooth control, and 3D-printed housing. Images float in mid-air.</p>
+          <div class="project-tags"><span class="project-tag">Arduino</span><span class="project-tag">Electronics</span><span class="project-tag">Embedded</span><span class="project-tag">CAD</span></div>
+          <span class="arrow-link">View project →</span>
+        </div>
+      </a>
+      <a href="balsa-bridge.html" class="project-card">
+        <div class="project-card-img">
+          <img src="https://steffandjones.github.io/assets/images/BalsaBridge.jpeg" alt="Balsa Bridge">
+        </div>
+        <div class="project-card-body">
+          <span class="project-badge badge-project">ES120</span>
+          <h3 class="project-title">BALSA WOOD BRIDGE</h3>
+          <p class="project-desc">Warren truss bridge lifting ~250lbs — nearly 20× its own weight. FEA-optimised in ANSYS, fabricated to sub-1mm tolerances. Failed at adhesive joints, not the structure.</p>
+          <div class="project-tags"><span class="project-tag">Structural Analysis</span><span class="project-tag">FEA</span><span class="project-tag">ANSYS</span><span class="project-tag">Fabrication</span></div>
+          <span class="arrow-link">View project →</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="project-row fade-up">
+      <a href="rocket-propulsion.html" class="project-card">
+        <div class="project-card-img">
+          <img src="https://steffandjones.github.io/assets/images/rocketfield.jfif" alt="Rocket Propulsion">
+        </div>
+        <div class="project-card-body">
+          <span class="project-badge badge-project">HRPG</span>
+          <h3 class="project-title">ROCKET PROPULSION</h3>
+          <p class="project-desc">Harvard Rocket Propulsion Group — building the Ivy League's first liquid bi-propellant rocket. Achieved stable combustion in successful hot fire of the spark torch igniter.</p>
+          <div class="project-tags"><span class="project-tag">Aerospace</span><span class="project-tag">Propulsion</span><span class="project-tag">Combustion</span><span class="project-tag">Fluids</span></div>
+          <span class="arrow-link">View project →</span>
+        </div>
+      </a>
+      <a href="track-field.html" class="project-card">
+        <div class="project-card-img">
+          <img src="https://steffandjones.github.io/assets/images/trackcover.jpeg" alt="Track &amp; Field">
+        </div>
+        <div class="project-card-body">
+          <span class="project-badge badge-sport">Athletics</span>
+          <h3 class="project-title">TRACK &amp; FIELD</h3>
+          <p class="project-desc">International 400m sprinter — 46.7s personal best. Harvard Varsity athlete, training 25+ hours per week alongside a full engineering degree. Represented Wales internationally.</p>
+          <div class="project-tags"><span class="project-tag">400m Sprint</span><span class="project-tag">International</span><span class="project-tag">Harvard Varsity</span></div>
+          <span class="arrow-link">View →</span>
+        </div>
+      </a>
+      <div class="project-card" style="background: var(--off); pointer-events: none;">
+        <div class="project-card-img" style="background: #E8E6DF;">
+          <div class="img-ph"><div class="img-ph-line"></div><span class="img-ph-text">Apps — coming soon</span><div class="img-ph-line"></div></div>
+        </div>
+        <div class="project-card-body">
+          <span class="project-badge badge-wip">In development</span>
+          <h3 class="project-title">APPS</h3>
+          <p class="project-desc">Two apps currently in development — a sports nutrition AI assistant and a social media platform. Pages coming soon.</p>
+          <div class="project-tags"><span class="project-tag">Mobile App</span><span class="project-tag">AI</span><span class="project-tag">Sports Nutrition</span><span class="project-tag">Social</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- RESUME DOWNLOAD -->
+<div class="resume-section">
+  <div class="resume-inner">
+    <div class="resume-text">
+      <h3>RESUME</h3>
+      <p>Full CV including education, experience, and skills — available to download as a PDF.</p>
+    </div>
+    <a href="assets/steffan_resume.pdf" class="btn btn-primary" id="resume-dl-btn" download>Download resume</a>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Contact</p>
+    <h2 class="section-title" style="color:var(--white);">GET IN<br>TOUCH</h2>
+    <div class="contact-grid fade-up">
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-group"><label class="form-label">Name</label><input type="text" name="name" class="form-input" placeholder="Jane Smith" required></div>
+        <div class="form-group"><label class="form-label">Email</label><input type="email" name="email" class="form-input" placeholder="jane@example.com" required></div>
+        <div class="form-group"><label class="form-label">Message</label><textarea name="message" class="form-textarea" placeholder="Tell me about the opportunity or project..." required></textarea></div>
+        <button type="submit" class="btn btn-light" id="submit-btn">Send message</button>
+        <p id="form-success" style="display:none; color:rgba(255,255,255,0.5); font-size:0.85rem; margin-top:0.5rem;">Message sent. I'll be in touch soon.</p>
+      </form>
+      <div class="contact-info">
+        <div class="contact-item"><span class="contact-item-label">Email</span><span class="contact-item-value"><a href="/cdn-cgi/l/email-protection#d8abacbdbebebcb2b7b6bdab98bfb5b9b1b4f6bbb7b5"><span class="__cf_email__" data-cfemail="e89b9c8d8e8e8c8287868d9ba88f85898184c68b8785">[email&#160;protected]</span></a></span></div>
+        <div class="contact-item"><span class="contact-item-label">LinkedIn</span><span class="contact-item-value"><a href="https://www.linkedin.com/in/steffan-jones400" target="_blank">linkedin.com/in/steffan-jones400</a></span></div>
+        <div class="contact-item"><span class="contact-item-label">Location</span><span class="contact-item-value">Ystradgynlais, Wales, UK</span></div>
+        <div class="contact-item"><span class="contact-item-label">Current role</span><span class="contact-item-value">Venture &amp; Product Development Manager, EQL Tech</span></div>
+        <div class="contact-item"><span class="contact-item-label">Open to</span><span class="contact-item-value">Engineering roles · Freelance · Consulting</span></div>
+        <div class="contact-item"><span class="contact-item-label">Response time</span><span class="contact-item-value">Within 24–48 hours</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Steffan Jones</p>
+  <div class="footer-links">
+    <a href="#roles">Roles</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="assets/shared.js"></script>
+<script>
+// ── Contact form via Formspree ────────────────────────────────────────────────
+// Sign up free at formspree.io, create a form, then replace YOUR_FORM_ID below.
+async function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submit-btn');
+  const success = document.getElementById('form-success');
+  const form = e.target;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://formspree.io/f/xlgajwwl', {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      success.style.display = 'block';
+      form.reset();
+      btn.textContent = 'Sent!';
+    } else {
+      throw new Error('Server error');
+    }
+  } catch (err) {
+    btn.textContent = 'Send message';
+    btn.disabled = false;
+    alert('Something went wrong. Please email me directly.');
+  }
+}
+
+// ── Resume download graceful fallback ────────────────────────────────────────
+// Shows an alert if the PDF hasn't been added to /assets/ yet.
+document.querySelectorAll('a[href*="steffan_resume.pdf"]').forEach(link => {
+  link.addEventListener('click', async function(e) {
+    try {
+      const res = await fetch(this.href, { method: 'HEAD' });
+      if (!res.ok) {
+        e.preventDefault();
+        alert('Resume PDF not yet available. Please check back soon or get in touch directly.');
+      }
+    } catch {
+      e.preventDefault();
+      alert('Resume PDF not yet available. Please check back soon or get in touch directly.');
+    }
+  });
+});
+</script>
+</body>
+</html>
